@@ -34,14 +34,18 @@ console.log(`The change from 500 UAH is: ${customerChange}`);
 console.log(`The average prices are: Apples - ${applePrice.toFixed(2)}, Oranges - ${orangePrice.toFixed(2)}, Bananas - ${bananaPrice.toFixed(2)}`);
 
 // random discount 
-const customerDiscount = Math.floor(Math.random() * 30 + 1) / 100; // range 1...30
+const minDiscount = 1;
+const maxDiscount = 100;
+const customerDiscount = Math.floor(Math.random() * (maxDiscount - minDiscount +1) + minDiscount) / 100; // range 1...30
 
 // price with discount
 const discountPrice = ((totalPrice) - (totalPrice * customerDiscount)).toFixed(2);
 console.log(`Price with discount of ${customerDiscount * 100}% is ${discountPrice}`);
 
 // profit with discount 
-const profit = ((totalPrice / 2) - (totalPrice - discountPrice)).toFixed(2);
+const primeCost = (totalPrice / 2).toFixed(2);
+const profit = ((primeCost) - (totalPrice - discountPrice)).toFixed(2);
+console.log(`Prime cost is: ${primeCost}`);
 console.log(`Profit with customer discount is: ${profit}`);
 
 const templateString = `
@@ -55,6 +59,7 @@ const templateString = `
     The change from 500 UAH is - ${customerChange}
     The average prices are: Apples - ${applePrice.toFixed(2)}, Oranges - ${orangePrice.toFixed(2)}, Bananas - ${bananaPrice.toFixed(2)}
     Price for customer with discount of ${customerDiscount * 100}% is - ${discountPrice}
+    Prime cost is: ${primeCost}
     Profit with customer discount is - ${profit}
 `;
 
