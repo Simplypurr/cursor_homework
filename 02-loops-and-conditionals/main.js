@@ -23,4 +23,4 @@ for (let i = N; i <= M; i++) {
    }
 }
 
-console.log(`Sum of numbers in range ${(evenNumberSetter) ? 'excluding':'including'} even numbers is ${sumInRange}`);
+document.writeln(`<p>Sum of numbers in range from ${N} to ${M} ${(evenNumberSetter) ? 'excluding':'including'} even numbers is ${sumInRange}</p>`);
