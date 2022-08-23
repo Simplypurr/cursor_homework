@@ -22,16 +22,17 @@ const roundedToHundreds = Math.ceil(totalPrice / 100) * 100;
 console.log(`Rounded to hundreds: ${roundedToHundreds}`);
 
 // boolean check for even number
-console.log(`The total price is even: ${Math.floor(totalPrice) % 2 === 0 ? true : false}`);
-console.log(`The total price is odd: ${Math.floor(totalPrice) % 2 === 1 ? true : false}`);
+console.log(`The total price is even: ${Math.floor(totalPrice) % 2 === 0}`);
+console.log(`The total price is odd: ${Math.floor(totalPrice) % 2 === 1}`);
 
 // change
 const customerPayment = 500;
 const customerChange = (customerPayment - totalPrice).toFixed(2); 
 console.log(`The change from 500 UAH is: ${customerChange}`);
 
-// average price 
-console.log(`The average prices are: Apples - ${applePrice.toFixed(2)}, Oranges - ${orangePrice.toFixed(2)}, Bananas - ${bananaPrice.toFixed(2)}`);
+// average price
+const averagePrice = totalPrice / 3; 
+console.log(`The average price is: ${averagePrice.toFixed(2)}`);
 
 // random discount 
 const minDiscount = 1;
@@ -54,10 +55,10 @@ const templateString = `
     Total price - ${totalPrice}
     Rounded and sum prices of goods with floor method (to down) - ${roundedToDown}
     Rounded sum of goods to hundreds with ceil method(to up) - ${roundedToHundreds}
-    The total price is even - ${Math.floor(totalPrice) % 2 === 0 ? true : false}
-    The total price is odd - ${Math.floor(totalPrice) % 2 === 1 ? true : false}
+    The total price is even - ${Math.floor(totalPrice) % 2 === 0}
+    The total price is odd - ${Math.floor(totalPrice) % 2 === 1}
     The change from 500 UAH is - ${customerChange}
-    The average prices are: Apples - ${applePrice.toFixed(2)}, Oranges - ${orangePrice.toFixed(2)}, Bananas - ${bananaPrice.toFixed(2)}
+    The average price is: ${averagePrice.toFixed(2)}
     Price for customer with discount of ${customerDiscount * 100}% is - ${discountPrice}
     Prime cost is: ${primeCost}
     Profit with customer discount is - ${profit}
