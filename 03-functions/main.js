@@ -36,8 +36,10 @@ function capitalizeLetter(string) {
 
 // Salary without tax
 function salaryWithoutTax(salary) {
-    return salary - (salary * (19.5 / 100));
+    let tax = 18 + 1.5;
+    return salary - (salary * (tax / 100));
 }
+
 
 // random number
 function getRandomNumber(min, max) {
@@ -58,10 +60,11 @@ function countLetters(letter, word) {
 
 // currency converter
 function convertCurrency(amount) {
+    let rate = 35;
     if (amount.toLowerCase().includes('uah')) {
-        return +(parseInt(amount, 10) / 35).toFixed(2) + ' $';
+        return (parseInt(amount, 10) / rate).toFixed(2) + '$';
     } else if (amount.includes('$')) {
-        return +(parseInt(amount, 10) * 35).toFixed(2) + ' UAH';
+        return (parseInt(amount, 10) * rate).toFixed(2) + 'UAH';
     } else {
         return 'Your currency is not valid, try again'
     }
@@ -78,13 +81,13 @@ function randomPassword(length = 8) {
 
 // delete matching letters
 function deleteLetters(letter, word) {
-    let string = word.split('');
+    let arrStr = word.split('');
     let updString = '';
-    for (let i = 0; i < string.length; i++) {
-        if (string[i] === letter.toLowerCase() || string[i] === letter.toUpperCase()) {
+    for (let i = 0; i < arrStr.length; i++) {
+        if (arrStr[i] === letter.toLowerCase() || arrStr[i] === letter.toUpperCase()) {
             continue
         }
-        updString += string[i];
+        updString += arrStr[i];
     }
     return updString;
 }
