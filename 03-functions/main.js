@@ -73,29 +73,30 @@ function convertCurrency(amount) {
 // random pass
 function randomPassword(length = 8) {
     let pass = '';
+    const min = 0;
+    const max = 9;
     for (let i = 0; i < length; i++) {
-        pass += Math.floor(Math.random() * (9 + 1)).toString();
+        pass += Math.floor(Math.random() * (max - min + 1) + min);
     }
     return pass
 }
 
 // delete matching letters
 function deleteLetters(letter, word) {
-    let arrStr = word.split('');
+    const arrStr = word.toLowerCase().split('');
+    const normalizedLetter = letter.toLowerCase();
     let updString = '';
     for (let i = 0; i < arrStr.length; i++) {
-        if (arrStr[i] === letter.toLowerCase() || arrStr[i] === letter.toUpperCase()) {
-            continue
-        }
-        updString += arrStr[i];
+        updString += (arrStr[i] === normalizedLetter) ? '' : arrStr[i]; 
     }
     return updString;
 }
 
 // palindrome sentence
 function isPalindrome(string) {
-    let strWithoutSpace = string.toLowerCase().replace((/\s/g), ''); 
-    return (strWithoutSpace.split('').reverse().join('') === strWithoutSpace);
+    const strWithoutSpace = string.toLowerCase().replace((/\s/g), '');
+    const reversedStr = strWithoutSpace.split('').reverse().join('');
+    return (reversedStr === strWithoutSpace);
 }
 
 // delete duplicate letter
