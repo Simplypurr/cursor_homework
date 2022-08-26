@@ -11,6 +11,7 @@ function getMaxDigit(number) {
 }
 
 // exponentiation number
+
     // using loop
 function pow1(x, n) {
     let result = 1;
