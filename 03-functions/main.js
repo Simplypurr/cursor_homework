@@ -76,7 +76,7 @@ function randomPassword(length = 8) {
     const min = 0;
     const max = 9;
     for (let i = 0; i < length; i++) {
-        pass += Math.floor(Math.random() * (max - min + 1) + min);
+        pass += getRandomNumber(min,max);
     }
     return pass
 }
