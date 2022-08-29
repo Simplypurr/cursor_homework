@@ -9,3 +9,6 @@
 ## Lesson 3. Functions.
 ### [Demo](https://simplypurr.github.io/cursor_homework/03-functions/) | [Code](https://github.com/Simplypurr/cursor_homework/blob/main/03-functions/main.js)
 ***
+## Lesson 4. Arrays.
+### [Demo](https://simplypurr.github.io/cursor_homework/04-arrays/) | [Code](https://github.com/Simplypurr/cursor_homework/blob/main/04-arrays/main.js)
+***
