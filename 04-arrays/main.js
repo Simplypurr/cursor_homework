@@ -16,7 +16,7 @@ function getPairs(arr) {
 
 // create a function which determines a topic for students in pairs
 function topicPicker(arr, studentPairs) {
-    const topicsAndPairs = studentPairs.flat().map((item, index) => Array(item, arr[index]));
+    const topicsAndPairs = studentPairs.flat().map((item, index) => [item, arr[index]]);
     return topicsAndPairs;
 }
 
@@ -31,7 +31,7 @@ function getGrade(students, marks) {
 
 // create a function which applies a random grade for each pair of students
 function getRandomGrade(arr) {
-    const randomGrade = arr.map((item) => Array(item));
+    const randomGrade = arr.map((item) => [item]);
     const minGrade = 2;
     const maxGrade = 5;
     for (let i = 0; i < arr.length; i++) {
