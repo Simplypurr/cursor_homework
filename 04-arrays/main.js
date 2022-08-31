@@ -5,14 +5,17 @@ const marks = [4, 5, 5, 3, 4, 5];
 
 // create a function which makes a pairs nested array
 function getPairs(arr) {
-    const maleStudents = arr.filter(item => !(item.endsWith("а") || item.endsWith("я")));
-    const femaleStudents = arr.filter(item => item.endsWith("а") || item.endsWith("я"));
-    const studentsInPairs = maleStudents.map((item, index) => Array(`${item} i ${femaleStudents[index]}`));
+    const maleStudents = [];
+    const femaleStudents = [];
+    for (const item of arr) {
+        item.endsWith('а')|| item.endsWith('я') ? femaleStudents.push(item) : maleStudents.push(item); 
+    }
+    const studentsInPairs = maleStudents.map((item, index) => [`${item} i ${femaleStudents[index]}`]);
     return studentsInPairs;
 }
 
 // create a function which determines a topic for students in pairs
-function topicPicker(arr) {
+function topicPicker(arr, studentPairs) {
     const topicsAndPairs = studentPairs.flat().map((item, index) => Array(item, arr[index]));
     return topicsAndPairs;
 }
@@ -43,7 +46,7 @@ function getRandomNumber(min, max) {
 }
 
 const studentPairs = getPairs(students);
-const topicsAndPairs = topicPicker(themes);
+const topicsAndPairs = topicPicker(themes, studentPairs);
 const studentsGrade = getGrade(students, marks);
 const randomPairsGrade = getRandomGrade(topicsAndPairs);
 
