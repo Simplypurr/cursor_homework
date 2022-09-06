@@ -71,7 +71,7 @@ console.log(getStudentNames(students));
 const getBestStudent = (arrOfObj) => {
   const bestStudent = arrOfObj.map(obj => {
     if (obj.hasOwnProperty('name') && obj.hasOwnProperty('subjects')) {
-      return getStudentInfo(obj) 
+      return getStudentInfo(obj); 
     }
   });
   return bestStudent.reduce((prev,curr) => prev.averageMark > curr.averageMark ? prev.name : curr.name);
