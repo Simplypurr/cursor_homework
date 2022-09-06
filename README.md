@@ -15,3 +15,6 @@
 ## Lesson 5. Array iteration methods.
 ### [Demo](https://simplypurr.github.io/cursor_homework/05-array-iteration/) | [Code](https://github.com/Simplypurr/cursor_homework/blob/main/05-array-iteration/main.js)
 ***
+## Lesson 6. Objects.
+### [Demo](https://simplypurr.github.io/cursor_homework/06-objects/) | [Code](https://github.com/Simplypurr/cursor_homework/blob/main/06-objects/main.js)
+***
