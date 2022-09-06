@@ -36,7 +36,8 @@ console.log(getSubjects(students[0]));
 const getAverageMark = (obj) => {
     if (obj.hasOwnProperty('subjects')) {
         const marks = Object.values(obj['subjects']).flat();
-        return +(marks.reduce((total, current) => ((total + current))) / marks.length).toFixed(2);
+        const result = +(marks.reduce((total, current) => ((total + current))) / marks.length).toFixed(2);
+        return result;
     }
 }
 console.log(getAverageMark(students[0]));
@@ -45,11 +46,11 @@ console.log(getAverageMark(students[0]));
 const getStudentInfo = (obj) => {
         const modifiedObj = Object.keys(obj).sort().reduce((newObj, key) => {
             if (key === 'subjects') {
-                Object.assign(newObj, {averageMark: getAverageMark(obj)})
+                Object.assign(newObj, {averageMark: getAverageMark(obj)});
             } else {
                 newObj[key] = obj[key];
             }
-        return newObj 
+        return newObj; 
     }, {});
         return modifiedObj;
 }
@@ -59,7 +60,7 @@ console.log(getStudentInfo(students[1]));
 const getStudentNames = (arrOfObj) => {
   const names = arrOfObj.map(obj => {
     if (obj.hasOwnProperty('name')) {
-      return obj.name
+      return obj.name;
     }
   });
   return names.sort();
