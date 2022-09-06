@@ -82,14 +82,14 @@ function getCombinationWord(str) {
 
         const remainedCharsPermuted = getCombinationWord(remainedChar);
 
-        for (let j = 0; j < remainedChar.length; j++) {
+        for (let j = 0; j < remainedCharsPermuted.length; j++) {
             const combination = currentChar + remainedCharsPermuted[j];
             result.push(combination)
         }
     }
     return result;
 }
-console.log(getCombinationWord('man'));
+console.log(getCombinationWord('manama'));
 
 function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
