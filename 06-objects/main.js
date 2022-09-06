@@ -57,12 +57,11 @@ console.log(getStudentInfo(students[1]));
 
 // get student name from array of student objects
 const getStudentNames = (arrOfObj) => {
-  const names = [];
-    for (const key in arrOfObj) {
-      if (arrOfObj[key].hasOwnProperty('name')) {
-        names.push(arrOfObj[key]['name']);
-      }
+  const names = arrOfObj.map(obj => {
+    if (obj.hasOwnProperty('name')) {
+      return obj.name
     }
+  });
   return names.sort();
 }
 console.log(getStudentNames(students));
