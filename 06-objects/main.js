@@ -25,29 +25,29 @@ const students = [{
 }];
 
 // get subjects of student object
-const getSubjects = (obj) => Object.keys(obj.subjects).map(item => item.slice(0,1).toUpperCase() + item.slice(1).replace('_',' '));
+const getSubjects = (obj) => Object.keys(obj.subjects).map(item => item.slice(0, 1).toUpperCase() + item.slice(1).replace('_', ' '));
 console.log(getSubjects(students[0]));
 
 // get average mark of student object
 const getAverageMark = (obj) => {
-    const marks = Object.values(obj.subjects).flat();
-    const result = +(marks.reduce((total, current) => ((total + current))) / marks.length).toFixed(2);
-    return result;
+  const marks = Object.values(obj.subjects).flat();
+  const result = +(marks.reduce((total, current) => ((total + current))) / marks.length).toFixed(2);
+  return result;
 }
 
 console.log(getAverageMark(students[0]));
 
 // get student info with average mark
 const getStudentInfo = (obj) => {
-        const modifiedObj = Object.keys(obj).sort().reduce((newObj, key) => {
-            if (key === 'subjects') {
-                Object.assign(newObj, {averageMark: getAverageMark(obj)});
-            } else {
-                newObj[key] = obj[key];
-            }
-        return newObj; 
-      }, {});
-        return modifiedObj;
+  const modifiedObj = Object.keys(obj).sort().reduce((newObj, key) => {
+    if (key === 'subjects') {
+      Object.assign(newObj, { averageMark: getAverageMark(obj) });
+    } else {
+      newObj[key] = obj[key];
+    }
+    return newObj;
+  }, {});
+  return modifiedObj;
 }
 console.log(getStudentInfo(students[1]));
 
@@ -57,13 +57,11 @@ console.log(getStudentNames(students));
 
 // get student whose academic performance is the best
 const getBestStudent = (arrOfObj) => {
-  const bestStudent = arrOfObj.map(obj => getStudentInfo(obj))
-                              .reduce((prev,curr) => prev.averageMark > curr.averageMark ? prev.name : curr.name);
+  const bestStudent = arrOfObj.map(obj => getStudentInfo(obj)).reduce((prev, curr) => prev.averageMark > curr.averageMark ? prev.name : curr.name);
   return bestStudent
 }
 console.log(getBestStudent(students));
 
 // letter counter 
 const letterCounter = (str) => str.toLowerCase().split('').reduce((count, current) => (count[current] = count[current] + 1 || 1, count), {});
-
 console.log(letterCounter('test'))
