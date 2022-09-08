@@ -1,6 +1,6 @@
 // create func get Random Array
 function getRandomArray(length, min, max) {
-    const arr = [...Array(length)]
+    const arr = [...Array(length)];
     return arr.map(() => getRandomNumber(min, max));
 }
 console.log(getRandomArray(10, 0, 100));
@@ -43,9 +43,9 @@ function getMedian(...numbers) {
     const middleOfArr = Math.floor(numbers.length / 2);
     const median = filterIntegers(numbers).sort((a,b) => a - b).reduce((prev, curr, ind, arr) => {
         if (arr.length % 2) {
-            return arr[middleOfArr]
+            return arr[middleOfArr];
         } else {
-            return (arr[middleOfArr - 1] + arr[middleOfArr]) / 2
+            return (arr[middleOfArr - 1] + arr[middleOfArr]) / 2;
         }
     });
     return median;   
@@ -73,7 +73,7 @@ console.log(getDivideByFive(1,2,19,123,20,40,55));
 // create func replace bad words with asterisks
 function replaceBadWords(string) {
     const badWords = ['shit', 'fuck'];
-    const regEx = new RegExp(badWords.join('|'), 'ig')
+    const regEx = new RegExp(badWords.join('|'), 'ig');
     const updString = string.split(' ').map((item) => item.replace(regEx, '****')).join(' ');
     return updString;
 }
@@ -101,7 +101,7 @@ function getCombinationWord(str) {
 
         for (let j = 0; j < remainedCharsPermuted.length; j++) {
             const combination = currentChar + remainedCharsPermuted[j];
-            result.push(combination)
+            result.push(combination);
         }
     }
     return result;
