@@ -118,3 +118,5 @@ function getRandomNumber(min, max) {
 function filterIntegers(intArr) {
     return intArr.filter(Number.isInteger);
 }
+
+
