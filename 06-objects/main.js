@@ -25,7 +25,13 @@ const students = [{
 }];
 
 // get subjects of student object
-const getSubjects = (obj) => Object.keys(obj.subjects).map(item => item.slice(0, 1).toUpperCase() + item.slice(1).replace('_', ' '));
+const getSubjects = (obj) => {
+  const upperCasedSubjects = Object.keys(obj.subjects).map(item => {
+    const normalizedSubject = item.slice(1).replace('_', ' ');
+    return item.slice(0, 1).toUpperCase() + normalizedSubject; 
+  });
+  return upperCasedSubjects;
+}
 console.log(getSubjects(students[0]));
 
 // get average mark of student object
@@ -39,15 +45,8 @@ console.log(getAverageMark(students[0]));
 
 // get student info with average mark
 const getStudentInfo = (obj) => {
-  const modifiedObj = Object.keys(obj).sort().reduce((newObj, key) => {
-    if (key === 'subjects') {
-      Object.assign(newObj, { averageMark: getAverageMark(obj) });
-    } else {
-      newObj[key] = obj[key];
-    }
-    return newObj;
-  }, {});
-  return modifiedObj;
+  const {course, name} = obj;
+  return {course, name, averageMark: getAverageMark(obj)};
 }
 console.log(getStudentInfo(students[1]));
 
@@ -57,7 +56,8 @@ console.log(getStudentNames(students));
 
 // get student whose academic performance is the best
 const getBestStudent = (arrOfObj) => {
-  const bestStudent = arrOfObj.map(obj => getStudentInfo(obj)).reduce((prev, curr) => {
+  const modifiedArrOfObj = arrOfObj.map(obj => getStudentInfo(obj));
+  const bestStudent = modifiedArrOfObj.reduce((prev, curr) => {
     if (prev.averageMark > curr.averageMark) {
       return prev.name;
     } else {
@@ -70,7 +70,8 @@ console.log(getBestStudent(students));
 
 // letter counter 
 const letterCounter = (str) => {
-  const result = str.toLowerCase().split('').reduce((count, current) => {
+  const strArr = str.toLowerCase().split('');
+  const result = strArr.reduce((count, current) => {
     if (!count[current]) {
       count[current] = 1;
     } else {
