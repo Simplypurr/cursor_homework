@@ -18,3 +18,6 @@
 ## Lesson 6. Objects.
 ### [Demo](https://simplypurr.github.io/cursor_homework/06-objects/) | [Code](https://github.com/Simplypurr/cursor_homework/blob/main/06-objects/main.js)
 ***
+## Lesson 7. Functional Programming.
+### [Demo](https://simplypurr.github.io/cursor_homework/07-functional-programming/) | [Code](https://github.com/Simplypurr/cursor_homework/blob/main/07-functional-programming/main.js)
+***
