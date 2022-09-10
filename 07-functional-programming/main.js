@@ -14,22 +14,25 @@ const lithuania = {
     vacancies: 1114 
 };
 
+// get taxes
 function getMyTaxes(salary) {
     return +(this.tax * salary).toFixed(2);
 }
 console.log(getMyTaxes.call(ukraine, 3000));
 
+// get middle taxes
 function getMiddleTaxes() {
     return +(this.tax * this.middleSalary).toFixed(2);
 }
 console.log(getMiddleTaxes.call(latvia))
 
+// get total taxes
 function getTotalTaxes() {
     return +(this.tax * this.middleSalary * this.vacancies)
 }
 console.log(getTotalTaxes.call(lithuania));
 
-
+// get profit from random salary in range from 1500 to 2000  
 function getMySalary(country) {
     setInterval(() => {
         const obj = {
@@ -45,7 +48,6 @@ function getMySalary(country) {
         }, 10000)
 }
 
-// getMySalary(ukraine);
 getMySalary(lithuania);
 
 function getRandomNumber(min, max) {
