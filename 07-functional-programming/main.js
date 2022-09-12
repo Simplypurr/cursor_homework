@@ -34,7 +34,8 @@ console.log(getTotalTaxes.call(lithuania));
 
 // get profit from random salary in range from 1500 to 2000  
 function getMySalary(country) {
-    setInterval(() => {
+    let timer = 0;
+    let timerId = setInterval(() => {
         const obj = {
             salary: getRandomNumber(1500,2000),
             taxes: function() {
@@ -44,11 +45,18 @@ function getMySalary(country) {
                 return this.salary - this.taxes();
             }
         }
-            return console.log({salary: obj.salary, taxes: obj.taxes(), profit: obj.profit()});
-        }, 10000)
+        console.log({salary: obj.salary, taxes: obj.taxes(), profit: obj.profit()});
+       
+        if(timer === 10) {
+            clearInterval(timerId);
+        }
+        timer++
+    },10000);
 }
 
 getMySalary(lithuania);
+
+
 
 function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
