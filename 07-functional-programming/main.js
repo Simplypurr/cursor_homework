@@ -38,10 +38,10 @@ function getMySalary(country) {
     let timerId = setInterval(() => {
         const obj = {
             salary: getRandomNumber(1500,2000),
-            taxes: function() {
+            taxes() {
                 return getMyTaxes.call(country, this.salary)
             },
-            profit: function() {
+            profit() {
                 return this.salary - this.taxes();
             }
         }
