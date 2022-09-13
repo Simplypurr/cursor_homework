@@ -21,3 +21,6 @@
 ## Lesson 7. Functional Programming.
 ### [Demo](https://simplypurr.github.io/cursor_homework/07-functional-programming/) | [Code](https://github.com/Simplypurr/cursor_homework/blob/main/07-functional-programming/main.js)
 ***
+## Lesson 8. Prototypes. ES6 Classes.
+### [Demo](https://simplypurr.github.io/cursor_homework/08-prototypes-and-classes/) | [Code](https://github.com/Simplypurr/cursor_homework/blob/main/08-prototypes-and-classes/main.js)
+***
