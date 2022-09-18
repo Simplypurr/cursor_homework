@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+    <style>
+        body {
+            background-color: #87A2FB;
+
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+        }
+        h1 {
+            text-align: center;
+        }
+        .wrapper, 
+        .wrapper-2 {
+            display: grid;
+            grid-template-columns: repeat(5,50px);
+            align-content: center;
+        }
+        .inner-block,
+        .another-inner-block {
+            width: 50px;
+            height: 50px;
+            border: 1px solid white;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Document Object Model</h1>
+    <div class="container">
+        <div class="wrapper"></div>
+        <div class="wrapper-2"></div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
