@@ -25,5 +25,5 @@
 ### [Demo](https://simplypurr.github.io/cursor_homework/08-Prototypes-and-classes/) | [Code](https://github.com/Simplypurr/cursor_homework/blob/main/08-Prototypes-and-classes/main.js)
 ***
 ## Lesson 9. DOM.
-### [Demo](https://simplypurr.github.io/cursor_homework/08-DOM/) | [Code](https://github.com/Simplypurr/cursor_homework/blob/main/09-DOM/main.js)
+### [Demo](https://simplypurr.github.io/cursor_homework/09-DOM/) | [Code](https://github.com/Simplypurr/cursor_homework/blob/main/09-DOM/main.js)
 ***
