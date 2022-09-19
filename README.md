@@ -27,3 +27,6 @@
 ## Lesson 9. DOM.
 ### [Demo](https://simplypurr.github.io/cursor_homework/09-DOM/) | [Code](https://github.com/Simplypurr/cursor_homework/blob/main/09-DOM/main.js)
 ***
+## Lesson 10. Events.
+### [Demo](https://simplypurr.github.io/cursor_homework/10-Events/) | [Code](https://github.com/Simplypurr/cursor_homework/blob/main/10-Events/)
+***
