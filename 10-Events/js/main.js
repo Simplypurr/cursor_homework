@@ -1,8 +1,12 @@
-window.addEventListener('keydown', playSound);
+document.addEventListener('keydown', playSound);
 
 function playSound(e) {
-    const audio = this.document.querySelector(`audio[data-code="${e.code}"]`);
-    const key = this.document.querySelector(`.key[data-code="${e.code}"]`);
+    let event = e;
+    if (e instanceof KeyboardEvent) {
+        event = e.code;
+    }
+    const audio = document.querySelector(`audio[data-code="${event}"]`);
+    const key = document.querySelector(`.key[data-code="${event}"]`);
     if (!audio) return;
     audio.currentTime = 0;
     audio.play();
