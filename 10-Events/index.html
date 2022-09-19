@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <title>Piano Keys</title>   
+</head>
+<body>
+    <h1 class="heading">Piano Keys</h1>
+    <div class="keys">
+        <div data-code="KeyA" class="key">
+            <kbd>A</kbd> 
+            <span class="sound">c</span>  
+        </div>
+        <div data-code="KeyS" class="key">
+            <kbd>S</kbd> 
+            <span class="sound">d</span> 
+        </div>
+        <div data-code="KeyD" class="key">
+            <kbd>D</kbd> 
+            <span class="sound">e</span> 
+        </div>
+        <div data-code="KeyF" class="key">
+            <kbd>F</kbd> 
+            <span class="sound">f</span> 
+        </div>
+        <div data-code="KeyG" class="key">
+            <kbd>G</kbd> 
+            <span class="sound">g</span> 
+        </div>
+        <div data-code="KeyH" class="key">
+            <kbd>H</kbd> 
+            <span class="sound">a</span> 
+        </div>
+        <div data-code="KeyJ" class="key">
+            <kbd>J</kbd> 
+            <span class="sound">b</span> 
+        </div>
+    </div>
+
+    <audio data-code="KeyA" src="./assets/audio/do.mp3"></audio>
+    <audio data-code="KeyS" src="./assets/audio/re.mp3"></audio>
+    <audio data-code="KeyD" src="./assets/audio/mi.mp3"></audio>
+    <audio data-code="KeyF" src="./assets/audio/fa.mp3"></audio>
+    <audio data-code="KeyG" src="./assets/audio/sol.mp3"></audio>
+    <audio data-code="KeyH" src="./assets/audio/la.mp3"></audio>
+    <audio data-code="KeyJ" src="./assets/audio/si.mp3"></audio>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
