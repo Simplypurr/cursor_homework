@@ -1,12 +1,12 @@
 document.addEventListener('keydown', playSound);
 
 function playSound(e) {
-    let event = e;
+    let targetElement = e;
     if (e instanceof KeyboardEvent) {
-        event = e.code;
+        targetElement = e.code;
     }
-    const audio = document.querySelector(`audio[data-code="${event}"]`);
-    const key = document.querySelector(`.key[data-code="${event}"]`);
+    const audio = document.querySelector(`audio[data-code="${targetElement}"]`);
+    const key = document.getElementById(`${targetElement}`);
     if (!audio) return;
     audio.currentTime = 0;
     audio.play();
@@ -14,9 +14,12 @@ function playSound(e) {
 }
 
 function removeTransition(e) {
-   if (e.propertyName !== 'transform') return;
-   this.classList.remove('playing');
+    if (e.propertyName !== 'transform') return;
+    this.classList.remove('playing');
 }
 
 const keys = document.querySelectorAll('.key');
-keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+keys.forEach(key => {
+    key.addEventListener('transitionend', removeTransition);
+    key.addEventListener('click', () => playSound(key.id));
+});
