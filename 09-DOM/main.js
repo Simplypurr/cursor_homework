@@ -1,10 +1,10 @@
 // version 1
 function generateBlock(quantity = 25, inClassElement = '.wrapper', className = 'inner-block') {
     const inside = document.querySelector(inClassElement);
-    const blocks = [...Array(quantity)].map((item) => document.createElement('div'));
+    const blocks = [...Array(quantity)].map(() => document.createElement('div'));
     setInterval(() => {
-        blocks.map((item) => {
-            item.setAttribute('class', className);
+        blocks.forEach((item) => {
+            item.classList.add(className);
             item.style.backgroundColor = generateHexColor();
         });
         inside.append(...blocks);
