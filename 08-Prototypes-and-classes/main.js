@@ -1,12 +1,12 @@
 // create student class
 
 class Student {
-    constructor(university, course, fullName, ...mark) {
+    constructor(university, course, fullName, mark) {
         this.university = university;
         this.course = course;
         this.fullName = fullName;
         this.mark = mark;
-        this.student = true;
+        this.isStudent = true;
     }
 
     getStudentInfo() {
@@ -14,15 +14,16 @@ class Student {
     }
 
     get marks() {
-        return (this.student) ? this.mark : null;
+        return this.isStudent ? this.mark : null;
     }
 
     set marks(value) {
-        (this.student) ? this.mark.push(value) : null;
+        if (this.isStudent) this.mark.push(value);
     }
 
     getAverageMark() {
-        return this.mark.reduce((total, prev) => total += prev,0) / this.mark.length;
+        const totalMarks = this.mark.reduce((total, prev) => total += prev,0)
+        return +(totalMarks / this.mark.length).toFixed(2);
     }
 
     dismissed() {
@@ -36,7 +37,7 @@ class Student {
 
 
 
-const elon = new Student('University of Pennsylvania', 5, 'Elon Musk', 5, 5, 5, 4);
+const elon = new Student('University of Pennsylvania', 5, 'Elon Musk', [5, 5, 5, 4]);
 
 console.log(elon.getStudentInfo());
 console.log(elon.marks);
@@ -48,10 +49,11 @@ elon.recovered();
 console.log(elon.marks);
 elon.marks = 5;
 console.log(elon.marks);
+console.log(elon.getAverageMark());
 
 class BudgetStudent extends Student {
-    constructor (university, course, fullName, ...mark) {
-        super(university, course, fullName, ...mark);
+    constructor (university, course, fullName, mark) {
+        super(university, course, fullName, mark);
         let timer = 0;
         const timerId = setInterval(() => {
             this.getScholarShip();
@@ -64,10 +66,11 @@ class BudgetStudent extends Student {
     }
 
     getScholarShip() {
-        if (this.getAverageMark() >= 4 && this.student) {
+        const gradeForScholarship = 4;
+        if (this.getAverageMark() >= gradeForScholarship && this.isStudent) {
             return console.log('You get a scholarship 1400 uah');
         } 
     }
 }
 
-const musk = new BudgetStudent('University of Pennsylvania', 5, 'Elon Musk', 5, 5, 5, 4);
+const musk = new BudgetStudent('University of Pennsylvania', 5, 'Elon Musk', [5, 5, 5, 4]);
