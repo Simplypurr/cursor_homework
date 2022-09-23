@@ -6,7 +6,7 @@ function playSound(e) {
         targetElement = e.code;
     }
     const audio = document.querySelector(`audio[data-code="${targetElement}"]`);
-    const key = document.getElementById(`${targetElement}`);
+    const key = document.getElementById(targetElement);
     if (!audio) return;
     audio.currentTime = 0;
     audio.play();
