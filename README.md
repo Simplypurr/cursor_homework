@@ -30,3 +30,6 @@
 ## Lesson 10. Events.
 ### [Demo](https://simplypurr.github.io/cursor_homework/10-Events/) | [Code](https://github.com/Simplypurr/cursor_homework/blob/main/10-Events/)
 ***
+## Lesson 11. Async and Date. Promises.
+### [Demo](https://simplypurr.github.io/cursor_homework/11-Promises-and-date/) | [Code](https://github.com/Simplypurr/cursor_homework/tree/main/11-Promises-and-date)
+***
