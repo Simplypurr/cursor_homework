@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"main.css"}
+{"version":3,"sources":["../../12-work-with-api/scss/main.scss","main.css"],"names":[],"mappings":"AAAA;EACI,sBAAA;EACA,UAAA;EACA,SAAA;ACCJ;;ADEA;EACI,qBAAA;ACCJ;;ADEA;EACI,qBAAA;EACA,cAAA;ACCJ;;ADEA;EACI,eAAA;EACA,cAAA;ACCJ;;ADEA;EACI,kBAAA;EACA,kDAAA;EACA,4BAAA;EACA,sBAAA;ACCJ;;ADEA;EACI,aAAA;ACCJ;;ADEA;EACI,YAAA;EACA,kBAAA;ACCJ","file":"main.css"}

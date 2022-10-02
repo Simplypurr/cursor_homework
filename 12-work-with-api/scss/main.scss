@@ -1,0 +1,48 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+ul, li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    border-radius: 50%;
+    width: 10rem;
+    height: 10rem;
+    grid-row: 1/2;
+}
+
+.card-info {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+body {
+    position: relative;
+    /* background-image:url(../assets/bg-image.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.character-card {
+    display: grid;
+    grid-template: 1fr / 1fr;
+    column-gap: 0.5rem;
+    row-gap: 0.2rem;
+    padding: 1rem 2rem;
+}
+
+.cards {
+    display: flex;
+    flex-flow: wrap;
+}
