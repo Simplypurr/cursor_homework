@@ -1,0 +1,34 @@
+:root {
+    --primary-color: #FAF5E4;
+    --key-bg-color: rgba(223, 14, 18, 0.3);
+    --outline-color: #df0e12;
+    --btn-border-color: #df0e12;
+    --btn-gradient: linear-gradient(#df0e12, #df0e12)
+}
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+ul, li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+body {
+    position: relative;
+    /* background-image:url(../assets/bg-image.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
