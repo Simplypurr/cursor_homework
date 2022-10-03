@@ -1,5 +1,7 @@
 const btn = document.querySelector('button');
 const cards = document.querySelector('.cards');
+const input = document.querySelector('input');
+const div = document.createElement('div');
 const characters = {
     'Luke Skywalker': './dist/assets/characters/lukeskywalker.png',
     'C-3PO': './dist/assets/characters/c-3po.png',
@@ -89,34 +91,29 @@ const characters = {
 
 
 
-function getData(filmId) {
-    const arrayOfPersons = [];
-    fetch(`https://swapi.dev/api/films/${filmId}/`)
-    .then(response => response.json())
-    .then(value => {
-        value.characters.forEach(item => {
-            fetch(item)
-            .then(response => response.json())
-            .then(value => arrayOfPersons.push({name: value.name, birth: value.birth_year, gender: value.gender}))
-        });
-    });
-    return arrayOfPersons;
-}
-
-const data = getData(3)
-
 btn.addEventListener('click', () => {
-    data.forEach((i) => {
-        const div = document.createElement('div');
-        const img = document.createElement('img');
-        img.src = characters[i.name];
-        img.classList.add('card-img')
-        div.classList.add('character-card');
-        div.innerHTML = `<div class="card-info"><p>Name: ${i.name}</p><p>BirthDate: ${i.birth}</p><p>Gender: ${i.gender}</p></div>`
-        div.append(img);
-        cards.append(div);
-
-    });
-})
+    fetch(`https://swapi.dev/api/films/${input.value}/`)
+    .then(response => response.json())
+    .then(episodData => {
+        episodData.characters.forEach(character => {
+            fetch(character)
+            .then(response => response.json())
+            .then(characterData => {
+                const {name, birth_year, gender} = characterData;
+                const requiredData = [name, birth_year, gender];
+                const div = document.createElement('div');
+                const img = document.createElement('img');
+                div.classList.add('character-card');
+                div.innerHTML = `<div class="card-info"><p>Name: ${requiredData[0]}</p><p>Birth Date: ${requiredData[1]}</p><p>Gender: ${requiredData[2]}</p></div>`
+                img.classList.add('card-img')
+                img.src = characters[requiredData[0]];
+                div.append(img);
+                cards.append(div);
+                console.log(requiredData)
+            })
+        })
+    })
+    
+});
 
 
