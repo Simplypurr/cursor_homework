@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,13 +9,41 @@
     <link rel="stylesheet" href="..//dist/css/main.css">
 </head>
 <body>
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+    <div id="title">
+        <span>
+            Work With
+        </span>
+        <br />
+        <span>
+            Star Wars API
+        </span>
+    </div>
+    </div>
     <div class="container">
-        <h1 class="heading">Work with API</h1>
-        <label for="length">Type quantity of characters</label>
-        <input type="number" id="length" placeholder="type here..." required>
-        <button id="submit">Generate</button>
+        <div class="container__selection">
+            <label for="episode">Choose an Episode</label>
+            <select name="episode" id="episode">
+                <option value="1">Episode I : The Phantom Menace</option>
+                <option value="2">Episode II : Attack of the Clones</option>
+                <option value="3">Episode III : Revenge of the Sith</option>
+                <option value="4">Episode IV : A New Hope</option>
+                <option value="5">Episode V : The Empire Strikes Back</option>
+                <option value="6">Episode VI : Return of the Jedi</option>
+            </select>
+
+            <div class="container__buttons">
+                <button id="show">Show Characters</button>
+                <button id="next">Show Planets</button>
+                <button id="wookie">I'm Wookie</button>
+            </div>
+        </div>
         <div class="cards"></div>
     </div>
+    <audio src="./dist/assets/ost/sound.mp3"></audio>
     <script src="./dist/js/main.js"></script>
 </body>
+
 </html>

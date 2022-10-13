@@ -1,0 +1,53 @@
+.card-info {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 20rem);
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    height: 60vh;
+    width: 100vw;
+    overflow: scroll;
+}
+.cards.active {
+    backdrop-filter: blur(3px);
+}
+
+.card {
+    position: relative;
+    color: #fff;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 5rem auto;
+    gap: 1rem;
+    background-color: #707EF9;
+    padding: 1rem;
+    border-radius: 1rem;
+    filter: drop-shadow(0px 20px 40px rgba(0, 10, 62, 0.05));
+
+
+    &__info {
+        grid-column: 2/3;
+    }
+
+    &:hover {
+        transform: scale(1.01);
+        transition: ease-in 5ms;
+        box-shadow: 0px 0px 10px #fff;
+    }
+
+    &:active {
+        transform: translateY(1px);
+    }
+
+    .gender {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        width: 2rem;
+    }
+}
