@@ -4,10 +4,8 @@ const btnNextPage = document.getElementById('next');
 const btnHomePage = document.getElementById('home');
 const cards = document.querySelector('.cards');
 const planets = document.querySelector('.planets');
-// const song = document.querySelector('audio');
-// window.addEventListener('load', (e) => {
-//     song.play();
-// });
+const song = document.querySelector('audio');
+
 const characters = {
     'Luke Skywalker': './dist/assets/characters/lukeskywalker.png',
     'C-3PO': './dist/assets/characters/c-3po.png',
@@ -181,7 +179,6 @@ const mapper = {
     'Grievous': './dist/assets/characters/Grievous.png'
 }
 
-
 function update() {
     let select = document.getElementById('episode');
     let optionValue = select.options[select.selectedIndex].value;
@@ -189,13 +186,9 @@ function update() {
 }
 
 const getData = async (value, wookie = false) => {
+    const query = wookie ? '?format=wookiee' : '';
     const {characters} = await fetch(`https://swapi.dev/api/films/${value}/`).then(response => response.json());
-    let charactersPromises;
-    if (wookie) {
-        charactersPromises = characters.map(char => fetch(char+'?format=wookiee').then(response => response.json()));
-    } else {
-        charactersPromises = characters.map(char => fetch(char).then(response => response.json()));
-    }
+    const charactersPromises = characters.map(char => fetch(char + query).then(response => response.json()));
     return Promise.all(charactersPromises);
 };
 
@@ -205,45 +198,44 @@ const getPlanets = async (value) => {
     return planets;
 }
 
-// console.log(getPlanets(1));
-
-
-
 const createCards = (value, wookie = false) => { 
     const div = document.createElement('div');
     const img = document.createElement('img');
     let requiredData;
+    let name;
     if (wookie) {
-        const {whrascwo, rhahrcaoac_roworarc, rrwowhwaworc} = value;
-        requiredData = [whrascwo, rhahrcaoac_roworarc, rrwowhwaworc];
-        img.src = characters[mapper[requiredData[0]]]
+        const {rhahrcaoac_roworarc, rrwowhwaworc} = value;
+        name = value.whrascwo;
+        requiredData = [rhahrcaoac_roworarc, rrwowhwaworc];
+        img.src = characters[mapper[name]]
     } else {
-        const {name, birth_year, gender} = value;
-        requiredData = [name, birth_year, gender];
-        img.src = (characters[requiredData[0]]);
+        const {birth_year, gender} = value;
+        name = value.name;
+        requiredData = [birth_year, gender];
+        img.src = (characters[name]);
     }
     
     
     requiredData.forEach(item => {
         switch (item) {
             case 'male':
-                div.innerHTML = `<div class="card__info"><p>Name: ${requiredData[0]}</p><p>Birth Date: ${requiredData[1]}</p><img class="gender" src=./dist/assets/gender/male.svg></div>`;
+                div.innerHTML = `<div class="card__info"><p>Name: ${name}</p><p>Birth Date: ${requiredData[0]}</p><img class="gender" src=./dist/assets/gender/male.svg></div>`;
                 break;
             case 'female':
-                div.innerHTML = `<div class="card__info"><p>Name: ${requiredData[0]}</p><p>Birth Date: ${requiredData[1]}</p><img class="gender" src=./dist/assets/gender/female.svg></div>`;
+                div.innerHTML = `<div class="card__info"><p>Name: ${name}</p><p>Birth Date: ${requiredData[0]}</p><img class="gender" src=./dist/assets/gender/female.svg></div>`;
                 break;
             case 'n/a':
             case 'hermaphrodite':
-                div.innerHTML = `<div class="card__info"><p>Name: ${requiredData[0]}</p><p>Birth Date: ${requiredData[1]}</p><img class="gender" src=./dist/assets/gender/non-binary.svg></div>`;
+                div.innerHTML = `<div class="card__info"><p>Name: ${name}</p><p>Birth Date: ${requiredData[0]}</p><img class="gender" src=./dist/assets/gender/non-binary.svg></div>`;
                 break;
             case 'scraanwo':
-                div.innerHTML = `<div class="card__info"><p>Whrascwo: ${requiredData[0]}</p><p>Rhahrcaoac Roworarc: ${requiredData[1]}</p><img class="gender" src=./dist/assets/gender/male.svg></div>`;
+                div.innerHTML = `<div class="card__info"><p>Whrascwo: ${name}</p><p>Rhahrcaoac Roworarc: ${requiredData[0]}</p><img class="gender" src=./dist/assets/gender/male.svg></div>`;
                 break;
             case 'wwwoscraanwo':
-                div.innerHTML = `<div class="card__info"><p>Whrascwo: ${requiredData[0]}</p><p>Rhahrcaoac Roworarc: ${requiredData[1]}</p><img class="gender" src=./dist/assets/gender/female.svg></div>`;
+                div.innerHTML = `<div class="card__info"><p>Whrascwo: ${name}</p><p>Rhahrcaoac Roworarc: ${requiredData[0]}</p><img class="gender" src=./dist/assets/gender/female.svg></div>`;
                 break;
             default: 
-                div.innerHTML = `<div class="card__info"><p>Whrascwo: ${requiredData[0]}</p><p>Rhahrcaoac Roworarc: ${requiredData[1]}</p><img class="gender" src=./dist/assets/gender/non-binary.svg></div>`;
+                div.innerHTML = `<div class="card__info"><p>Whrascwo: ${name}</p><p>Rhahrcaoac Roworarc: ${requiredData[0]}</p><img class="gender" src=./dist/assets/gender/non-binary.svg></div>`;
                 break;
         }
 
@@ -259,37 +251,31 @@ const createCards = (value, wookie = false) => {
 
 
 
-document.addEventListener('click', (event) => {
-    switch (event.target.id) {
-        case 'show':
-            const value = update()
-            cards.innerHTML = '';
-            btnShow.disabled = true;
-            getData(value).then(char => {
-                char.map(char => createCards(char));
-                btnShow.disabled = false;
-            });
-        break;
-        case 'wookie':
-            cards.innerHTML = '';
-            btnWookie.disabled = true;
-            getData(1, true).then(char => {
-                char.map(char => createCards(char, true));
-            });
-            btnShow.innerText = 'woaosdkao';
-            btnNextPage.innerText = 'wadsalsoodsa';
-            btnWookie.innerText = 'wsoosaoosadlf';
-            btnWookie.disabled = false;
-        break;
-        case 'next':
-            window.location.href = 'planets.html';
-        break;
-        case 'home': 
-            window.location.href = 'index.html';
-    }
+btnShow.addEventListener('click', () => {
+    const value = update();
+    cards.innerHTML = '';
+    btnShow.disabled = true;
+    getData(value).then(char => {
+        char.map(char => createCards(char));
+        btnShow.disabled = false;
+    });
 });
 
-window.addEventListener('load', event => {
+btnWookie.addEventListener('click', () => {
+    const value = update();
+    cards.innerHTML = '';
+    btnWookie.disabled = true;
+    btnShow.innerText = 'woaosdkao';
+    btnNextPage.innerText = 'wadsalsoodsa';
+    btnWookie.innerText = 'wsoosaoosadlf';
+    btnWookie.disabled = false;
+    getData(value, true).then(char => {
+        char.map(char => createCards(char, true));
+    });
+});
+
+window.addEventListener('load', (e) => {
+    song.play();
     const planetsPages = [1,2,3,4,5,6];
     planetsPages.forEach(page => getPlanets(page).then(value => {
         value.forEach(value => {
@@ -322,7 +308,7 @@ for (i = 0; i < l; i++) {
     c.innerHTML = selElmnt.options[j].innerHTML;
     c.addEventListener("click", function(e) {
        
-        var y, i, k, s, h, sl, yl;
+        let y, i, k, s, h, sl, yl;
         s = this.parentNode.parentNode.getElementsByTagName("select")[0];
         sl = s.length;
         h = this.parentNode.previousSibling;
@@ -354,7 +340,7 @@ for (i = 0; i < l; i++) {
 }
 function closeAllSelect(elmnt) {
   
-  var x, y, i, xl, yl, arrNo = [];
+  let x, y, i, xl, yl, arrNo = [];
   x = document.getElementsByClassName("select-items");
   y = document.getElementsByClassName("select-selected");
   xl = x.length;
