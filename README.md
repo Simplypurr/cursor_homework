@@ -33,3 +33,6 @@
 ## Lesson 11. Async and Date. Promises.
 ### [Demo](https://simplypurr.github.io/cursor_homework/11-Promises-and-date/) | [Code](https://github.com/Simplypurr/cursor_homework/tree/main/11-Promises-and-date)
 ***
+## Lesson 12. Work with API. 
+### [Demo](https://simplypurr.github.io/cursor_homework/12-work-with-api/) | [Code](https://github.com/Simplypurr/cursor_homework/tree/main/12-work-with-api)
+***
