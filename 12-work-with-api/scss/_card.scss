@@ -1,3 +1,4 @@
+@import './config';
 .card-info {
     grid-column: 2/3;
     grid-row: 1/2;
@@ -24,7 +25,7 @@
     display: grid;
     grid-template-columns: 5rem auto;
     gap: 1rem;
-    background-color: #707EF9;
+    background-color: $cards-color;
     padding: 1rem;
     border-radius: 1rem;
     filter: drop-shadow(0px 20px 40px rgba(0, 10, 62, 0.05));

@@ -1,0 +1,28 @@
+$primary-color: #FFF8EA;
+$secondary-color: #5800FF;
+$cards-color: #4C0033;
+$btn-gradient: linear-gradient(#4C0033, #4C0033);
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+ul, li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    grid-row: 1/2;
+}

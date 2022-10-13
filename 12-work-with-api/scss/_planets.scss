@@ -1,0 +1,42 @@
+@import './config';
+
+
+.scroll-container {
+    color: yellow;
+	position: absolute;
+    display: flex;
+    justify-content: center;
+	width: 18em;
+	height: 100rem;
+	bottom: 0;
+	font-size: 350%;
+	text-align: center;
+	overflow: hidden;
+	transform-origin: 50% 100%;
+	transform: perspective(470px) rotateX(25deg);
+}
+
+.scroll-container:after {
+	position: absolute;
+	content: ' ';
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 60%;
+	background-image: linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+	pointer-events: none;
+}
+  
+.planets {
+	position: absolute;
+	top: 100%;
+	animation: scroll 50s linear 4s infinite;
+}
+
+@keyframes scroll {
+	0% { top: 100%; }
+	100% { top: -170%; }
+}
+  
+
+  
