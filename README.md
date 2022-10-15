@@ -36,3 +36,6 @@
 ## Lesson 12. Work with API. 
 ### [Demo](https://simplypurr.github.io/cursor_homework/12-work-with-api/) | [Code](https://github.com/Simplypurr/cursor_homework/tree/main/12-work-with-api)
 ***
+## Lesson 13. Generators. 
+### [Demo](https://simplypurr.github.io/cursor_homework/13-generators) | [Code](https://github.com/Simplypurr/cursor_homework/tree/main/13-generators)
+***
