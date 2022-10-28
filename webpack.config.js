@@ -3,9 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'production',
-    optimization: {
-        usedExports: true,
-    },
     entry: path.resolve(__dirname, '14-webpack/src/index.js'),
     output: {
         path: path.resolve(__dirname, '14-webpack/dist'),

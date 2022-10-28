@@ -1,6 +1,5 @@
 {
   "name": "cursor-webpack",
-  "sideEffects": false,
   "version": "1.0.1",
   "description": "Webpack config",
   "main": "index.js",

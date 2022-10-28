@@ -1,5 +1,5 @@
 import { getMaxDigit } from "../../03-functions/main";
-import "./scss/main.scss"
+import "../src/scss/main.scss";
 import { studentsArr, getPairs } from "../../04-arrays/main";
 import { getMode } from "../../05-array-iteration/main";
 import { getSubjects, students } from "../../06-objects/main";
