@@ -1,5 +1,5 @@
 // get the biggest number from any digit number
-function getMaxDigit(number) {
+export function getMaxDigit(number) {
     let digit = number.toString().split('');
     let max = +digit[0]
     for (let i = 0; i <= digit.length; i++){
@@ -111,17 +111,17 @@ function deleteDuplicateLetters(string) {
     return updString;
 }
 
-document.writeln(`<ul><li>Function 1 - ${getMaxDigit(21638)}</li>
-                <li>Function 2 - ${pow1(5, 3)}</li>
-                <li>Function 2.1 - ${pow2(5, 5)}</li>
-                <li>Function 3 - ${capitalizeLetter('valEra')}</li>
-                <li>Function 4 - ${salaryWithoutTax(10000)}</li>
-                <li>Function 5 - ${getRandomNumber(10, 50)}</li>
-                <li>Function 6 - ${countLetters('a', 'Abrakadabra')}</li>
-                <li>Function 7 - ${convertCurrency('1000$')}</li>
-                <li>Function 8 - ${randomPassword()}</li>
-                <li>Function 9 - ${deleteLetters('a', 'Abrakadabra')}</li>
-                <li>Function 10 - ${isPalindrome('race car')}</li>
-                <li>Function 11 - ${deleteDuplicateLetters('see you later alligator')}</li></ul>`);
+// document.writeln(`<ul><li>Function 1 - ${getMaxDigit(21638)}</li>
+//                 <li>Function 2 - ${pow1(5, 3)}</li>
+//                 <li>Function 2.1 - ${pow2(5, 5)}</li>
+//                 <li>Function 3 - ${capitalizeLetter('valEra')}</li>
+//                 <li>Function 4 - ${salaryWithoutTax(10000)}</li>
+//                 <li>Function 5 - ${getRandomNumber(10, 50)}</li>
+//                 <li>Function 6 - ${countLetters('a', 'Abrakadabra')}</li>
+//                 <li>Function 7 - ${convertCurrency('1000$')}</li>
+//                 <li>Function 8 - ${randomPassword()}</li>
+//                 <li>Function 9 - ${deleteLetters('a', 'Abrakadabra')}</li>
+//                 <li>Function 10 - ${isPalindrome('race car')}</li>
+//                 <li>Function 11 - ${deleteDuplicateLetters('see you later alligator')}</li></ul>`);
 
 

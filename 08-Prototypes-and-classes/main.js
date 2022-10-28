@@ -39,17 +39,17 @@ class Student {
 
 const elon = new Student('University of Pennsylvania', 5, 'Elon Musk', [5, 5, 5, 4]);
 
-console.log(elon.getStudentInfo());
-console.log(elon.marks);
-elon.dismissed();
-console.log(elon.marks);
-elon.marks = 5;
-console.log(elon.marks);
-elon.recovered();
-console.log(elon.marks);
-elon.marks = 5;
-console.log(elon.marks);
-console.log(elon.getAverageMark());
+// console.log(elon.getStudentInfo());
+// console.log(elon.marks);
+// elon.dismissed();
+// console.log(elon.marks);
+// elon.marks = 5;
+// console.log(elon.marks);
+// elon.recovered();
+// console.log(elon.marks);
+// elon.marks = 5;
+// console.log(elon.marks);
+// console.log(elon.getAverageMark());
 
 class BudgetStudent extends Student {
     constructor (university, course, fullName, mark) {

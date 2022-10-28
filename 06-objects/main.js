@@ -1,4 +1,4 @@
-const students = [{
+export const students = [{
   name: "Tanya",
   course: 3,
   subjects: {
@@ -25,14 +25,14 @@ const students = [{
 }];
 
 // get subjects of student object
-const getSubjects = (obj) => {
+export const getSubjects = (obj) => {
   const upperCasedSubjects = Object.keys(obj.subjects).map(item => {
     const normalizedSubject = item.slice(1).replace('_', ' ');
     return item.slice(0, 1).toUpperCase() + normalizedSubject; 
   });
   return upperCasedSubjects;
 }
-console.log(getSubjects(students[0]));
+//(getSubjects(students[0]));
 
 // get average mark of student object
 const getAverageMark = (obj) => {
@@ -41,18 +41,18 @@ const getAverageMark = (obj) => {
   return +(total / marks.length).toFixed(2);
 }
 
-console.log(getAverageMark(students[0]));
+//(getAverageMark(students[0]));
 
 // get student info with average mark
 const getStudentInfo = (obj) => {
   const {course, name} = obj;
   return {course, name, averageMark: getAverageMark(obj)};
 }
-console.log(getStudentInfo(students[1]));
+//(getStudentInfo(students[1]));
 
 // get student name from array of student objects
 const getStudentNames = (arrOfObj) => arrOfObj.map(obj => obj.name).sort();
-console.log(getStudentNames(students));
+//(getStudentNames(students));
 
 // get student whose academic performance is the best
 const getBestStudent = (arrOfObj) => {
@@ -66,7 +66,7 @@ const getBestStudent = (arrOfObj) => {
   });
   return bestStudent
 }
-console.log(getBestStudent(students));
+//(getBestStudent(students));
 
 // letter counter 
 const letterCounter = (str) => {
@@ -82,4 +82,4 @@ const letterCounter = (str) => {
   return result;
 }
 
-console.log(letterCounter('test'))
+//(letterCounter('test'))

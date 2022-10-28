@@ -3,8 +3,10 @@ const students = ["Олександр", "Ігор", "Олена", "Марія", 
 const themes = ["Диференційне рівняння", "Теорія автоматів", "Алгоритми і структури даних"];
 const marks = [4, 5, 5, 3, 4, 5];
 
+export {students as studentsArr};
+
 // create a function which makes a pairs nested array
-function getPairs(arr) {
+export function getPairs(arr) {
     const maleStudents = [];
     const femaleStudents = [];
     for (const item of arr) {
@@ -45,12 +47,12 @@ function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-const studentPairs = getPairs(students);
-const topicsAndPairs = topicPicker(themes, studentPairs);
-const studentsGrade = getGrade(students, marks);
-const randomPairsGrade = getRandomGrade(topicsAndPairs);
+// export const studentPairs = getPairs(students);
+// const topicsAndPairs = topicPicker(themes, studentPairs);
+// const studentsGrade = getGrade(students, marks);
+// const randomPairsGrade = getRandomGrade(topicsAndPairs);
 
-document.writeln(`<ul><li>${studentPairs}</li>
-                    <li>${topicsAndPairs}</li>
-                    <li>${studentsGrade}</li>
-                    <li>${randomPairsGrade}</li></ul>`);
+// document.writeln(`<ul><li>${studentPairs}</li>
+//                     <li>${topicsAndPairs}</li>
+//                     <li>${studentsGrade}</li>
+//                     <li>${randomPairsGrade}</li></ul>`);

@@ -13,24 +13,24 @@ const lithuania = {
     middleSalary: 1509, 
     vacancies: 1114 
 };
-
+export {ukraine, lithuania, latvia};
 // get taxes
-function getMyTaxes(salary) {
+export function getMyTaxes(salary) {
     return +(this.tax * salary).toFixed(2);
 }
-console.log(getMyTaxes.call(ukraine, 3000));
+//(getMyTaxes.call(ukraine, 3000));
 
 // get middle taxes
 function getMiddleTaxes() {
     return +(this.tax * this.middleSalary).toFixed(2);
 }
-console.log(getMiddleTaxes.call(latvia))
+//(getMiddleTaxes.call(latvia))
 
 // get total taxes
 function getTotalTaxes() {
     return +(this.tax * this.middleSalary * this.vacancies)
 }
-console.log(getTotalTaxes.call(lithuania));
+//(getTotalTaxes.call(lithuania));
 
 // get profit from random salary in range from 1500 to 2000  
 function getMySalary(country) {
@@ -45,7 +45,7 @@ function getMySalary(country) {
                 return this.salary - this.taxes();
             }
         }
-        console.log({salary: obj.salary, taxes: obj.taxes(), profit: obj.profit()});
+        //({salary: obj.salary, taxes: obj.taxes(), profit: obj.profit()});
        
         if(timer === 10) {
             clearInterval(timerId);
