@@ -39,3 +39,6 @@
 ## Lesson 13. Generators. 
 ### [Demo](https://simplypurr.github.io/cursor_homework/13-generators) | [Code](https://github.com/Simplypurr/cursor_homework/tree/main/13-generators)
 ***
+## Lesson 14. Webpack. 
+### [Demo](https://simplypurr.github.io/cursor_homework/14-webpack/dist) | [Code](https://github.com/Simplypurr/cursor_homework/tree/main/14-webpack)
+***

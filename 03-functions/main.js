@@ -30,6 +30,8 @@ function pow2(x, n) {
     }
 }
 
+
+
 // Capitalize letter in string
 function capitalizeLetter(string) {
     return string.slice(0,1).toUpperCase() + string.slice(1).toLowerCase();

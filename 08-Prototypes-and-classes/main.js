@@ -1,6 +1,6 @@
 // create student class
 
-class Student {
+export class Student {
     constructor(university, course, fullName, mark) {
         this.university = university;
         this.course = course;
@@ -73,4 +73,8 @@ class BudgetStudent extends Student {
     }
 }
 
-const musk = new BudgetStudent('University of Pennsylvania', 5, 'Elon Musk', [5, 5, 5, 4]);
+// const musk = new BudgetStudent('University of Pennsylvania', 5, 'Elon Musk', [5, 5, 5, 4]);
+
+
+
+

@@ -1,5 +1,5 @@
 // version 1
-function generateBlock(quantity = 25, inClassElement = '.wrapper', className = 'inner-block') {
+export function generateBlock(quantity = 25, inClassElement = '.wrapper', className = 'inner-block') {
     const inside = document.querySelector(inClassElement);
     const blocks = [...Array(quantity)].map(() => document.createElement('div'));
     setInterval(() => {
@@ -23,11 +23,11 @@ function generateBlocks(quantity = 25) {
     },1000);
 }
 
-function generateHexColor() {
+export function generateHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
 
 
-generateBlocks();
-generateBlock(25, '.wrapper-2', 'another-inner-block');
+// generateBlocks();
+// generateBlock(25, '.wrapper-2', 'another-inner-block');

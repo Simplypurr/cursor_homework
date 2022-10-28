@@ -3,12 +3,18 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'production',
+    optimization: {
+        usedExports: true,
+    },
     entry: path.resolve(__dirname, '14-webpack/src/index.js'),
     output: {
         path: path.resolve(__dirname, '14-webpack/dist'),
         filename: '[name][contenthash].js',
         clean: true,
-        assetModuleFilename: '[name][ext].js',
+        assetModuleFilename: 'assets/[name][ext][query]',
+    },
+    experiments: {
+        topLevelAwait: true
     },
     devtool: 'source-map',
     devServer: {
